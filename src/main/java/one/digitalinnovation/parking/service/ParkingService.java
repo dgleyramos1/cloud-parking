@@ -19,11 +19,8 @@ public class ParkingService {
 
     static {
         var id = getUUID();
-        var id1 = getUUID();
-        Parking parking = new Parking(id, "DMS-1112", "PB", "CELTA", "PRETO");
-        Parking parking1 = new Parking(id1, "KWA-2222", "RN", "GOL", "BRANCO");
+        Parking parking = new Parking(id, "DMS-1111", "PB", "CELTA", "PRETO");
         parkingMap.put(id, parking);
-        parkingMap.put(id1, parking1);
     }
 
     public List<Parking> findAll() {
