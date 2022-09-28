@@ -51,6 +51,13 @@ public class ParkingService {
         return parking;
     }
 
+    public Parking checkOut(String id) {
+        Parking parking = findById(id);
+        parking.setExitDate(LocalDateTime.now());
+        parking.setBill(ParkingCheckOut.getBill(parking));
+        return parkingRepository.save(parking);
+    }
+
     private static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "");
     }
