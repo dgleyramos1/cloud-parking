@@ -23,10 +23,6 @@ public class ParkingService {
         return parkingRepository.findAll();
     }
 
-    private static String getUUID() {
-        return UUID.randomUUID().toString().replace("-", "");
-    }
-
     public Parking findById(String id) {
         return parkingRepository.findById(id).orElseThrow(
                 () -> new ParkingNotFoundException(id));
@@ -53,6 +49,10 @@ public class ParkingService {
         parking.setLicense(parkingCreate.getLicense());
         parkingRepository.save(parking);
         return parking;
+    }
+
+    private static String getUUID() {
+        return UUID.randomUUID().toString().replace("-", "");
     }
 
 }
