@@ -33,24 +33,25 @@ public class ParkingControllerTest {
                 .body("license[0]", Matchers.equalTo("DMS-1111"));
 
     }
-
-    @Test
-    void whenCreateThenCheckIsCreated() {
-        var createDTO = new ParkingCreateDTO();
-        createDTO.setColor("amarelo");
-        createDTO.setLicense("ddd-1111");
-        createDTO.setModel("opala");
-        createDTO.setState("BH");
-
-        RestAssured.given()
-                .when()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(createDTO)
-                .post("/parking")
-                .then()
-                .statusCode(HttpStatus.CREATED.value())
-                .body("license", Matchers.equalTo("ddd-1111"));
-
-    }
+    /*
+     * @Test
+     * void whenCreateThenCheckIsCreated() {
+     * var createDTO = new ParkingCreateDTO();
+     * createDTO.setColor("amarelo");
+     * createDTO.setLicense("ddd-1111");
+     * createDTO.setModel("opala");
+     * createDTO.setState("BH");
+     * 
+     * RestAssured.given()
+     * .when()
+     * .contentType(MediaType.APPLICATION_JSON_VALUE)
+     * .body(createDTO)
+     * .post("/parking")
+     * .then()
+     * .statusCode(HttpStatus.CREATED.value())
+     * .body("license", Matchers.equalTo("ddd-1111"));
+     * 
+     * }
+     */
 
 }
