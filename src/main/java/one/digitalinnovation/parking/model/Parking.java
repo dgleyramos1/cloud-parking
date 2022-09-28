@@ -13,6 +13,14 @@ public class Parking {
     private LocalDateTime exitDate;
     private Double bill;
 
+    public Parking(String id, String license, String state, String model, String color) {
+        this.id = id;
+        this.license = license;
+        this.state = state;
+        this.model = model;
+        this.color = color;
+    }
+
     /**
      * @return String return the id
      */
